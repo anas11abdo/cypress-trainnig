@@ -27,13 +27,14 @@ describe("secnario",()=>{
         //بدخل على الويب سايت و بعمل انسبكت على ال ايليمانت الي بدي اياه  وبوخذ id or name or title
         //DOM :Document Object Model شجرة اوبجيكت بتقسم الويب سايت الى شجرة هيد بودي و ايليمنت
         // id ادق اشي و مستحيل يتكرر
-        cy.get("#email").type("cypressUser@gmail.com")
+        cy.get("#email").type("cypressUser@gmail.com");
         //id => #idname
         //class => .classname
         //atrebute => []
-        cy.get("#pass").type("test@123")
-        cy.get("[name='send']").click()
+        cy.get("#pass").type("test@123");
+        cy.get("[name='send']").click();
         // Assertion
         cy.get(".page-title").should("contain","My Account");
+        cy.get("#search").type("Hi Anas");
     });
 });
