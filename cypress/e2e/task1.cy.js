@@ -5,16 +5,16 @@ describe("task1",()=>{
 
     it("solution",()=>{
         cy.visit("https://demo.productionready.io/#/register");
-        cy.get(".navbar-brand").contains("conduit");
-        cy.get("li").filter(".nav-item").first();
-        cy.get(".nav-link.active").eq(0);
-        cy.get(".text-xs-center.ng-binding").contains("h1","Sign up");
-        cy.get(".ng-scope").find("p").find("a").first();
-        cy.get("[placeholder='Username']");
-        cy.get("[type='email']");
-        cy.get(".form-group").next().next().find("[placeholder='Password']");
-        cy.get("button");
-        cy.get("a.logo-font.ng-binding");
-        cy.get("span");
+        cy.contains(".navbar-brand","conduit"); // class ,text
+        cy.contains("a.nav-link","Home"); // element.class , text
+        cy.get(".nav-link.active"); // class.class
+        cy.contains("h1.text-xs-center.ng-binding","Sign up"); // element.class.class , text
+        cy.contains("a","Have an account?"); // element , text
+        cy.get("[placeholder='Username']"); // attrebute = value
+        cy.get("[type='email']"); // attrebute2 = value
+        cy.get("[placeholder~='Password']"); // attrebute ~= value
+        cy.get("button"); //element
+        cy.get("a.logo-font.ng-binding"); //element , class , class
+        cy.get("span"); // element
     });
 });
