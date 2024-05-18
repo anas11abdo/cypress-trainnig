@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("logintomaginto",()=>{
+    cy.visit("/customer/account/login/");
+});
+
+Cypress.Commands.add("Login",()=>{
+    cy.visit("https://admin-demo.nopcommerce.com/");
+    cy.get("#Email").clear().type("admin@yourstore.com");
+    cy.get("#Password").clear().type("admin");
+    cy.get("[type='submit']").click();
+    cy.wait(2000);
+
+    //Assertion
+    cy.get(".content-header").should("contain","Dashboard")
+});
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from failing the test
+    return false
+  });
