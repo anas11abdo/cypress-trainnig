@@ -15,7 +15,7 @@ describe('Test Case B', () => {
         cy.get(".select2-search.select2-search--inline").eq(0).type("Computers"+"{enter}");
         cy.get("#Price").clear().type("3000");
         cy.get("[name='save']").click();
-
+            
         //Assertion
         cy.contains("The new product has been added successfully.").should("be.visible");
     });
